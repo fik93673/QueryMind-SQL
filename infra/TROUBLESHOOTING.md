@@ -47,7 +47,7 @@ Quick reference for the most common deployment issues.
 **Causes & fixes:**
 1. **build_index.py was never run:**
    ```bash
-   cd /opt/text-to-sql
+   cd /opt/querymind-sql
    source venv/bin/activate && source .env
    python -m agent.build_index
    sudo systemctl restart texttosql
@@ -55,7 +55,7 @@ Quick reference for the most common deployment issues.
 2. **Wrong CHROMA_PERSIST_DIR:** The path in `.env` must match where `build_index.py` wrote files. Use absolute paths.
 3. **Permission issue:** Ensure `ubuntu` user owns `chroma_store/`:
    ```bash
-   chown -R ubuntu:ubuntu /opt/text-to-sql/chroma_store
+   chown -R ubuntu:ubuntu /opt/querymind-sql/chroma_store
    ```
 
 ---
@@ -67,10 +67,10 @@ Quick reference for the most common deployment issues.
 **Causes & fixes:**
 1. **OPENAI_API_KEY not set or wrong:** Check `.env` file:
    ```bash
-   grep OPENAI_API_KEY /opt/text-to-sql/.env
+   grep OPENAI_API_KEY /opt/querymind-sql/.env
    ```
 2. **Key has been revoked:** Generate a new key at https://platform.openai.com/api-keys.
-3. **EnvironmentFile not loaded:** Confirm `EnvironmentFile=/opt/text-to-sql/.env` in the service file and restart.
+3. **EnvironmentFile not loaded:** Confirm `EnvironmentFile=/opt/querymind-sql/.env` in the service file and restart.
 
 ---
 
@@ -104,12 +104,12 @@ Quick reference for the most common deployment issues.
 
 **Causes & fixes:**
 1. **Frontend not built:** Run `npm run build` in the `frontend/` directory.
-2. **nginx root path wrong:** Confirm `root /opt/text-to-sql/frontend/dist;` in nginx.conf.
+2. **nginx root path wrong:** Confirm `root /opt/querymind-sql/frontend/dist;` in nginx.conf.
 3. **SPA routing not configured:** Ensure `try_files $uri $uri/ /index.html;` is in nginx location block.
 4. **JavaScript error in browser console:** Open DevTools → Console tab to see the actual error.
 5. **Old dist/ cached:** Hard reload with `Ctrl+Shift+R` or `Cmd+Shift+R`.
    ```bash
    # Rebuild frontend
-   cd /opt/text-to-sql/frontend && npm run build
+   cd /opt/querymind-sql/frontend && npm run build
    sudo systemctl reload nginx
    ```

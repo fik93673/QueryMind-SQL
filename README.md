@@ -230,7 +230,7 @@ React renders the SQL in a syntax-highlighted box and the results as a pageable 
 ## 7. 📁 Project Structure
 
 ```
-SQL-Query-Generator/
+QueryMind-SQL/
 │
 ├── agent/                      # Core AI pipeline
 │   ├── sql_chain.py            # Main LCEL pipeline: question → SQL → results
@@ -326,8 +326,8 @@ The database uses a **star schema** — a design pattern common in data warehous
 ### 1. Clone and install Python dependencies
 
 ```bash
-git clone https://github.com/ridash2005/SQL-Query-Generator.git
-cd SQL-Query-Generator
+git clone https://github.com/ridash2005/QueryMind-SQL.git
+cd QueryMind-SQL
 pip install -r requirements.txt
 ```
 

@@ -101,7 +101,7 @@ export default function Footer() {
               gap: '10px',
             }}>
               {[
-                { label: 'GitHub Repository', href: 'https://github.com/ridash2005/SQL-Query-Generator' },
+                { label: 'GitHub Repository', href: 'https://github.com/ridash2005/QueryMind-SQL' },
                 { label: 'Olist Dataset', href: 'https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce' },
                 { label: 'LangChain Docs', href: 'https://www.langchain.com/' },
                 { label: 'OpenAI Platform', href: 'https://platform.openai.com/' },

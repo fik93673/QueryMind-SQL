@@ -155,7 +155,7 @@ export default function Navbar() {
         </button>
 
         <a
-          href="https://github.com/ridash2005/SQL-Query-Generator"
+          href="https://github.com/ridash2005/QueryMind-SQL"
           target="_blank"
           rel="noopener noreferrer"
           className="qm-btn-secondary"

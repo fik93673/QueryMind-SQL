@@ -1,6 +1,6 @@
-# Text-to-SQL Deployment Guide
+# QueryMind-SQL Deployment Guide
 
-Complete guide to deploying the Text-to-SQL system on AWS EC2 (Ubuntu 22.04).
+Complete guide to deploying the QueryMind-SQL system on AWS EC2 (Ubuntu 22.04).
 
 ---
 
@@ -34,8 +34,8 @@ Complete guide to deploying the Text-to-SQL system on AWS EC2 (Ubuntu 22.04).
 ```bash
 ssh -i ~/.ssh/your-key.pem ubuntu@<PUBLIC_IP>
 sudo apt-get install -y git
-git clone https://github.com/your-org/text-to-sql.git /opt/text-to-sql
-cd /opt/text-to-sql
+git clone https://github.com/ridash2005/QueryMind-SQL.git /opt/querymind-sql
+cd /opt/querymind-sql
 ```
 
 ---
@@ -54,13 +54,13 @@ This installs Python 3.11, Node.js 20, nginx, and system dependencies.
 
 ```bash
 export OPENAI_API_KEY="sk-your-actual-key-here"
-export APP_DIR=/opt/text-to-sql
+export APP_DIR=/opt/querymind-sql
 sudo bash infra/configure_env.sh
 ```
 
 Verify the `.env` was created with correct permissions:
 ```bash
-ls -la /opt/text-to-sql/.env  # Should show -rw------- (600)
+ls -la /opt/querymind-sql/.env  # Should show -rw------- (600)
 ```
 
 ---
@@ -80,7 +80,7 @@ scp -i ~/.ssh/your-key.pem \
     olist_geolocation_dataset.csv \
     olist_order_reviews_dataset.csv \
     product_category_name_translation.csv \
-    ubuntu@<PUBLIC_IP>:/opt/text-to-sql/data/raw/
+    ubuntu@<PUBLIC_IP>:/opt/querymind-sql/data/raw/
 ```
 
 Or set `KAGGLE_AUTO_DOWNLOAD=1` in `.env` and install the Kaggle CLI:
@@ -94,7 +94,7 @@ pip install kaggle
 ## Phase 6: Install Application
 
 ```bash
-cd /opt/text-to-sql
+cd /opt/querymind-sql
 bash infra/install_app.sh
 ```
 
@@ -167,7 +167,7 @@ Open your browser at `http://<PUBLIC_IP>/`
 ## Updating the Application
 
 ```bash
-cd /opt/text-to-sql
+cd /opt/querymind-sql
 git pull origin main
 source venv/bin/activate && pip install -r requirements.txt
 cd frontend && npm ci && npm run build && cd ..

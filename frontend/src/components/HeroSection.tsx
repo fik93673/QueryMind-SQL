@@ -52,10 +52,12 @@ export default function HeroSection() {
     <section id="hero" style={{
       minHeight: '100vh',
       display: 'flex',
-      alignItems: 'center',
+      flexDirection: 'column',
+      justifyContent: 'center',
       position: 'relative',
       overflow: 'hidden',
-      paddingTop: 'var(--nav-height)',
+      paddingTop: 'calc(var(--nav-height) + 40px)',
+      paddingBottom: '40px',
     }}>
       {/* Background gradient orbs */}
       <div style={{
@@ -270,10 +272,9 @@ export default function HeroSection() {
 
       {/* Stats bar */}
       <div style={{
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        right: 0,
+        position: 'relative',
+        width: '100%',
+        marginTop: '40px',
       }}>
         <div className="qm-container">
           <div className="qm-stats" style={{

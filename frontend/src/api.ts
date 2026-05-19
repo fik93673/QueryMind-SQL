@@ -1,6 +1,16 @@
 import axios from 'axios'
 
-const api = axios.create({ baseURL: '/' })
+const savedUrl = localStorage.getItem('qm_api_url') || '/'
+const api = axios.create({ baseURL: savedUrl })
+
+export function setApiUrl(url: string) {
+  localStorage.setItem('qm_api_url', url)
+  api.defaults.baseURL = url
+}
+
+export function getApiUrl(): string {
+  return localStorage.getItem('qm_api_url') || ''
+}
 
 export interface QueryResponse {
   sql: string

@@ -1,7 +1,15 @@
 import { useState, useEffect } from 'react'
+import { getApiUrl, setApiUrl } from '../api'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
+  const [showSettings, setShowSettings] = useState(false)
+  const [apiUrlInput, setApiUrlInput] = useState(getApiUrl() || 'http://localhost:8000')
+
+  const saveSettings = () => {
+    setApiUrl(apiUrlInput)
+    setShowSettings(false)
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -90,6 +98,20 @@ export default function Navbar() {
           </a>
         ))}
 
+        <button
+          onClick={() => setShowSettings(true)}
+          className="qm-btn-secondary"
+          style={{
+            padding: '8px',
+            fontSize: '16px',
+            background: 'transparent',
+            border: 'none',
+          }}
+          title="Settings"
+        >
+          ⚙️
+        </button>
+
         <a
           href="https://github.com/ridash2005/SQL-Query-Generator"
           target="_blank"
@@ -107,6 +129,63 @@ export default function Navbar() {
           GitHub
         </a>
       </div>
+
+      {showSettings && (
+        <div style={{
+          position: 'fixed',
+          inset: 0,
+          background: 'rgba(0,0,0,0.8)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 1000,
+        }}>
+          <div className="qm-glass-card" style={{ width: '400px', padding: '30px' }}>
+            <h3 style={{ marginBottom: '10px' }}>Backend Connection</h3>
+            <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '20px', lineHeight: 1.5 }}>
+              GitHub Pages is a static host. To use the chat playground, you must run the FastAPI backend locally with your OpenAI API Key and data, then connect the frontend to it.
+            </p>
+            <div style={{ marginBottom: '20px' }}>
+              <label style={{ display: 'block', fontSize: '12px', marginBottom: '8px', color: 'var(--text-tertiary)' }}>
+                API Base URL
+              </label>
+              <input
+                type="text"
+                value={apiUrlInput}
+                onChange={(e) => setApiUrlInput(e.target.value)}
+                placeholder="http://localhost:8000"
+                style={{
+                  width: '100%',
+                  background: 'var(--bg-tertiary)',
+                  border: '1px solid var(--border-color)',
+                  color: 'var(--text-primary)',
+                  padding: '10px 14px',
+                  borderRadius: '6px',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '13px',
+                  boxSizing: 'border-box'
+                }}
+              />
+            </div>
+            <div style={{ display: 'flex', gap: '10px', justifyContent: 'flex-end' }}>
+              <button
+                onClick={() => setShowSettings(false)}
+                className="qm-btn-secondary"
+                style={{ padding: '8px 16px' }}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={saveSettings}
+                className="qm-btn-primary"
+                style={{ padding: '8px 16px' }}
+              >
+                Save Settings
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   )
 }

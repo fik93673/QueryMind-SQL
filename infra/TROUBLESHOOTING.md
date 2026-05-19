@@ -113,3 +113,9 @@ Quick reference for the most common deployment issues.
    cd /opt/querymind-sql/frontend && npm run build
    sudo systemctl reload nginx
    ```
+
+---
+
+## 📖 Additional Resources
+
+For a complete step-by-step production deployment walkthrough on Ubuntu and AWS EC2, please refer to the [Deployment Guide](README_DEPLOY.md).

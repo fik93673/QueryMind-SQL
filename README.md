@@ -20,17 +20,17 @@
 
 ## 📚 Table of Contents
 
-1. [🤔 What Does This Project Do?](#1-what-does-this-project-do)
-2. [😬 The Problem With "Typical" NL-to-SQL](#2-the-problem-with-typical-nl-to-sql)
-3. [🛠️ How QueryMind Solves It](#3-how-querymind-solves-it)
-4. [🏗️ High-Level Architecture](#4-high-level-architecture)
-5. [🔄 Step-by-Step: How a Query Works](#5-step-by-step-how-a-query-works)
-6. [✅ What It Can (and Cannot) Do](#6-what-it-can-and-cannot-do)
-7. [📁 Project Structure](#7-project-structure)
-8. [🗄️ Database Schema](#8-database-schema)
-9. [🚀 Quick Start](#9-quick-start)
-10. [⚙️ Environment Variables](#10-environment-variables)
-11. [📄 License](#11-license)
+1. [🤔 What Does This Project Do?](#1--what-does-this-project-do)
+2. [😬 The Problem With "Typical" NL-to-SQL](#2--the-problem-with-typical-nl-to-sql)
+3. [🛠️ How QueryMind Solves It](#3--how-querymind-solves-it)
+4. [🏗️ High-Level Architecture](#4--high-level-architecture)
+5. [🔄 Step-by-Step: How a Query Works](#5--step-by-step--how-a-query-works)
+6. [✅ What It Can (and Cannot) Do](#6--what-it-can-and-cannot-do)
+7. [📁 Project Structure](#7--project-structure)
+8. [🗄️ Database Schema](#8--database-schema)
+9. [🚀 Quick Start](#9--quick-start)
+10. [⚙️ Environment Variables](#10--environment-variables)
+11. [📄 License](#11--license)
 
 ---
 
@@ -340,7 +340,7 @@ cp .env.example .env
 
 ### 3. Seed the database 🌱
 
-Download the raw Olist CSVs into `data/raw/` (see Kaggle link in [What Does This Project Do?](#1-what-does-this-project-do)), then run:
+Download the raw Olist CSVs into `data/raw/` (see Kaggle link in [What Does This Project Do?](#1--what-does-this-project-do)), then run:
 
 ```bash
 python -m data.seed
@@ -369,6 +369,11 @@ npm run dev
 ```
 
 Open [http://localhost:5173](http://localhost:5173) in your browser and start asking questions! 🎉
+
+### 🌐 Production Deployment
+If you are ready to deploy the system to an AWS EC2 (Ubuntu 22.04) server, follow our production-ready guides in the `infra/` directory:
+- 📖 [QueryMind-SQL Deployment Guide](infra/README_DEPLOY.md) — Step-by-step installation, systemd service setup, and Nginx reverse proxy configuration.
+- 🛠️ [Troubleshooting Guide](infra/TROUBLESHOOTING.md) — Fast solutions for 502 gateways, timeouts, permission issues, or white screens.
 
 ---
 

@@ -193,3 +193,9 @@ with get_engine().connect() as c:
     for r in rows: print(r)
 "
 ```
+
+---
+
+## Phase 11: Troubleshooting
+
+If you encounter any issues during or after deployment (such as a 502 Bad Gateway, blank page, timeouts, or permission errors), please refer to our comprehensive [Troubleshooting Guide](TROUBLESHOOTING.md) for diagnostics and step-by-step resolution.

